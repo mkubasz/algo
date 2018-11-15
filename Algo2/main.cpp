@@ -26,6 +26,11 @@ private:
                 union_set(u, v);
             }
         }
+        for(int i = 1; i < parent.size()-1; i++) {
+            if(parent[i]==i)
+                return -1;
+
+        }
         return sum;
     }
 
@@ -44,7 +49,12 @@ public:
     }
 
     void printResult() {
-        std::cout << compute() << std::endl;
+        int result = compute();
+        if(result == -1) {
+            std::cout <<  "brak" << std::endl;
+        } else {
+            std::cout <<  result << std::endl;
+        }
     }
 };
 
